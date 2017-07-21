@@ -18,7 +18,7 @@ type ActiveCvns struct {
 	Cvns          []Cvn
 }
 
-// GetActiveCVNs is the wrapper around getactivecvn rpc call
+// GetActiveCVNs is the wrapper around getactivecvn rpc
 func (c *Client) GetActiveCVNs() (*ActiveCvns, error) {
 	response, err := c.c.Call("getactivecvns")
 	if err != nil {

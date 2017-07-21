@@ -5,8 +5,10 @@ A thin wrapper around the FairCoin rpc calls:
 
 * Blockchain
   * [`getblockcount`][1]
+  * [`getblockhash index`][2]
+  * [`getblock "hash" ( verbose ) ( verbose mode )`][3]
 * Cvn
-  * [`getactivecvns`][2]
+  * [`getactivecvns`][4]
 
 # Usage
 
@@ -31,4 +33,6 @@ func main() {
 
 
 [1]: https://github.com/faircoin/faircoin/blob/v2.0.0/src/rpc/blockchain.cpp#L171
-[2]: https://github.com/faircoin/faircoin/blob/v2.0.0/src/rpc/cvn.cpp#L35
+[2]: https://github.com/faircoin/faircoin/blob/v2.0.0/src/rpc/blockchain.cpp#L302
+[3]: https://github.com/faircoin/faircoin/blob/v2.0.0/src/rpc/blockchain.cpp#L385
+[4]: https://github.com/faircoin/faircoin/blob/v2.0.0/src/rpc/cvn.cpp#L35

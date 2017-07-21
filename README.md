@@ -3,7 +3,10 @@ faircoin rpcclient
 
 A thin wrapper around the FairCoin rpc calls:
 
-* [`getactivecvns`][1]
+* Blockchain
+  * [`getblockcount`][1]
+* Cvn
+  * [`getactivecvns`][2]
 
 # Usage
 
@@ -27,4 +30,5 @@ func main() {
 ```
 
 
-[1]: https://github.com/faircoin/faircoin/blob/v2.0.0/src/rpc/server.h#L203
+[1]: https://github.com/faircoin/faircoin/blob/v2.0.0/src/rpc/blockchain.cpp#L171
+[2]: https://github.com/faircoin/faircoin/blob/v2.0.0/src/rpc/cvn.cpp#L35

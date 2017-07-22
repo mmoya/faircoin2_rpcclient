@@ -38,8 +38,17 @@ func expandUser(path string) string {
 	return expanded
 }
 
+func NewCredential(user, password string) *Credential {
+	cred := Credential{
+		user:     user,
+		password: password,
+	}
+
+	return &cred
+}
+
 // CookieCredential reads credential from default cookie
-func CookieCredential() Credential {
+func CookieCredential() *Credential {
 	path := expandUser(*cookiePath)
 
 	f, err := os.Open(path)
@@ -63,11 +72,11 @@ func CookieCredential() Credential {
 		password: fields[1],
 	}
 
-	return cred
+	return &cred
 }
 
 // NewClient returns a FairCoin RPC client
-func NewClient(url string, cred Credential) *Client {
+func NewClient(url string, cred *Credential) *Client {
 	rpcClient := jsonrpc.NewRPCClient(url)
 	rpcClient.SetBasicAuth(cred.user, cred.password)
 
